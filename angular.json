@@ -31,10 +31,30 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/animate.min.css",
+              "node_modules/bootstrap/dist/css/jquery.mCustomScrollbar.min.css",
+              "node_modules/bootstrap/dist/css/jquery-ui.css",
+              "node_modules/bootstrap/dist/css/meanmenu.css",
+              "node_modules/bootstrap/dist/css/nice-select.css",
+              "node_modules/bootstrap/dist/css/normalize.css",
+              "node_modules/bootstrap/dist/css/owl.carousel.min.css",
+              "node_modules/bootstrap/dist/css/responsive.css",
+              "node_modules/bootstrap/dist/css/slick.css",
+              "node_modules/bootstrap/dist/css/style.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/jquery.min.js",
+              "node_modules/bootstrap/dist/js/jquery.validate.js",
+              "node_modules/bootstrap/dist/js/plugin.js",
+              "node_modules/bootstrap/dist/js/popper.min.js",
+              "node_modules/bootstrap/dist/js/custom.js",
+              "node_modules/bootstrap/dist/js/jquery.mCustomScrollbar.concat.min.js",
+              "node_modules/bootstrap/dist/js/jquery-3.0.0.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              
+
             ]
           },
           "configurations": {
@@ -103,5 +123,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4da685c0-f83b-4cca-925f-a36f2f3c8ca3"
   }
 }
