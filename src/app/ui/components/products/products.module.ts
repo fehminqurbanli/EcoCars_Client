@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
 import{FormsModule,ReactiveFormsModule} from '@angular/forms'; 
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListItemComponent } from './list/list-item/list-item.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     CreateComponent,
-    ListComponent
+    ListComponent,
+    ListItemComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,7 @@ import{FormsModule,ReactiveFormsModule} from '@angular/forms';
       {path:"",component:ProductsComponent}
     ]),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,FontAwesomeModule
   ]
 })
 export class ProductsModule { }

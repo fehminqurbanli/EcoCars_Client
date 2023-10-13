@@ -3,6 +3,8 @@ import { HttpClientService } from '../http-client.service';
 import { CreateProduct } from 'src/app/contracts/create-product';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { product } from 'src/app/data-types';
+import { GetModelName } from 'src/app/contracts/get-model-name';
 
 
 @Injectable({
@@ -20,29 +22,29 @@ export class ProductService {
         console.log(res);
       });
 
-    
-    console.log("Full Name : " + product.name);  
-   console.log("Email Id : " + product.email); 
-   console.log("Phone : " + product.phonenumber); 
-   console.log("City : " + product.city); 
-   console.log("Note : " + product.note); 
   }
 
   getBrandNames():Observable<any>{
     return this.httpClientService.get({
       controller:"TB_Ads/GetBrandNames"
-    })
-
-
-
-    // this.httpClientService.get({
-    //   controller:"TB_Ads/GetBrandNames"
-    // })
-    //   .subscribe((res)=>{
-    //     console.log(res);
-    //   })
-    }
+    })}
     
 
+    getModelNames(brandId?:string):Observable<any>{
+      return this.httpClientService.get<GetModelName>({
+        controller:"TB_Ads/GetModelNames?brandId="+brandId
+      })}
+
+      getAll():Observable<any>{
+        return this.httpClientService.get({
+          controller:"TB_Ads"
+        })
+      };
   
+
+
+      getById(id:string){
+        return this.httpClientService.get<product>({
+          controller:"TB_Ads/GetById?id="+id
+        })}
 }

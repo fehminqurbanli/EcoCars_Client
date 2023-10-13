@@ -1,19 +1,26 @@
-<p>products works!</p>
 <form #frmRegister="ngForm" (ngSubmit)="create(frmRegister.value)">
 
-<div class="container-sm">
+<div class="container-sm" style="background-color: beige;">
     
-
+<br><br>
     <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <h2>ELAN YERLƏŞDİRMƏK</h2>
+        </div>
+<div class="col-md-6"></div><br><br>
+
+
         <div class="col-sm-2">
            
             <!-- <h3>Marka</h3> -->
             
         </div>
         <div class="col-sm-4 form-group">
-            <label for="brands">Marka</label>
-            <select id="brands" class="form-control" name="brands" [(ngModel)]="brandNames" aria-label="Seçin">
-                <option *ngFor="let br of brandNames" [value]="br.id">
+            <label>Marka</label>
+            <!-- <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="brandNames"> -->
+            <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="bName">
+                <option *ngFor="let br of brandNames" [ngValue]="br.id">
                     {{br.brandName}}
                 </option>
                 
@@ -22,32 +29,30 @@
 
 
 
-        <div class="col-sm-2">
+        <!-- <div class="col-sm-2">
             
             <h3>Yanacaq növü</h3>
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" aria-label="Seçin" [(ngModel)]="bName">
+                <option>Open this select menu</option>
+           
             </select>
-        </div>
+        </div> -->
 
 
         <div class="col-sm-2">
             
-            <h3>Model</h3>
+            <!-- <h3>Model</h3> -->
            
         </div>
-        <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+        <div class="col-sm-4 form-group">
+            <label>Model</label>
+            <select id="models" class="form-control" name="models" [(ngModel)]="Model_Id">
+                <option *ngFor="let m of modelNames" [ngValue]="m.id">
+                    {{m.id}}--{{m.modelName}}
+                </option>
             </select>
         </div>
 
@@ -58,26 +63,24 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" aria-label="Seçin" name="transmission_id" [(ngModel)]="transmission_id">
+                <option *ngFor="let t of transmissions" [ngValue]="t.id">
+                    {{t.description}}
+                </option>
+            
             </select>
         </div>
 
-
+<!-- 
         <div class="col-sm-2">
             
             <h3>Ban növü</h3>
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" aria-label="Seçin" name="ban_type" [(ngModel)]="ban_type">
+                <option>Open this select menu</option>
+              
             </select>
         </div>
 
@@ -276,7 +279,7 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2"><h3>Əlaqə</h3></div>
         
-        <div class="col-sm-8"></div>
+        <div class="col-sm-8"></div> -->
 
 
 
@@ -320,7 +323,7 @@
             <button class="btn btn-success" type="submit">Əlavə et</button>
         </div>
     </div>
-
+<br><br>
       
     </div>
     

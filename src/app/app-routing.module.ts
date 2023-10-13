@@ -4,6 +4,8 @@ import { LayoutComponent } from './admin/layout/layout.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { HomeComponent } from './ui/components/home/home.component';
 import { CreateComponent } from './ui/components/products/create/create.component';
+import { ListItemComponent } from './ui/components/products/list/list-item/list-item.component';
+import { AboutComponent } from './ui/components/about/about.component';
 
 const routes: Routes = [
   {
@@ -21,7 +23,10 @@ const routes: Routes = [
   {path:'products',loadChildren:()=>import("./ui/components/products/products.module").then(
     module=>module.ProductsModule
   )},
-  { path: 'create', component: CreateComponent }
+  { path: 'create', component: CreateComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'products/list-item/:id', component: ListItemComponent }
+
 ];
 
 @NgModule({
