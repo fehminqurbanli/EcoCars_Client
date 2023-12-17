@@ -13,11 +13,11 @@
 
         <div class="col-sm-2">
            
-            <!-- <h3>Marka</h3> -->
+            <h3>Marka</h3>
             
         </div>
         <div class="col-sm-4 form-group">
-            <label>Marka</label>
+            <!-- <label>Marka</label> -->
             <!-- <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="brandNames"> -->
             <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="bName">
                 <option *ngFor="let br of brandNames" [ngValue]="br.id">
@@ -44,14 +44,14 @@
 
         <div class="col-sm-2">
             
-            <!-- <h3>Model</h3> -->
+            <h3>Model</h3>
            
         </div>
         <div class="col-sm-4 form-group">
-            <label>Model</label>
-            <select id="models" class="form-control" name="models" [(ngModel)]="Model_Id">
+            <!-- <label>Model</label> -->
+            <select id="models" class="form-control" ngModel name="model_id">
                 <option *ngFor="let m of modelNames" [ngValue]="m.id">
-                    {{m.id}}--{{m.modelName}}
+                    {{m.modelName}}
                 </option>
             </select>
         </div>
@@ -63,7 +63,7 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin" name="transmission_id" [(ngModel)]="transmission_id">
+            <select class="form-select" ngModel name="transmission_id">
                 <option *ngFor="let t of transmissions" [ngValue]="t.id">
                     {{t.description}}
                 </option>
@@ -71,32 +71,17 @@
             </select>
         </div>
 
-<!-- 
+
         <div class="col-sm-2">
             
             <h3>Ban növü</h3>
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin" name="ban_type" [(ngModel)]="ban_type">
-                <option>Open this select menu</option>
-              
-            </select>
-        </div>
-
-
-
-        <div class="col-sm-2">
-            
-            <h3>Sürətlər qutusu</h3>
-           
-        </div>
-        <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" ngModel name="ban_type">
+                <option *ngFor="let b of banTypes" [ngValue]="b.id">
+                    {{b.description}}
+                </option>
             </select>
         </div>
 
@@ -107,8 +92,39 @@
            
         </div>
         <div class="col-sm-4">
-            <input type="number" class="form-control form-control-lg" id="exampleFormControlInput1" min="0" placeholder="0">
+            <select class="form-select" ngModel name="speed_box">
+                <option *ngFor="let s of speedBoxes" [ngValue]="s.id">
+                    {{s.description}}
+                </option>
+            </select>
         </div>
+
+
+
+        <div class="col-sm-2">
+            
+            <h3>Yürüş</h3>
+           
+        </div>
+        <div class="col-sm-2">
+            <!-- <label for="exampleFormControlInput1" class="form-label" >Adınız</label> -->
+            <input class="form-control form-control-lg" type="number" ngModel name="distance" aria-label=".form-control-lg example">
+        </div>
+        <div class="col-sm-2 pt-2">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" ngModel name="distance_id" value="1" checked>
+                <label class="form-check-label" for="distance_id">
+                  km
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="2" ngModel name="distance_id">
+                <label class="form-check-label" for="distance_id">
+                  mi
+                </label>
+              </div>
+        </div>
+        
         
         <div class="col-sm-2">
             
@@ -116,11 +132,10 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" ngModel name="year">
+                <option *ngFor="let y of years" [ngValue]="y.description">
+                    {{y.description}}
+                </option>
             </select>
         </div>
 
@@ -131,11 +146,10 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" ngModel name="color_id">
+                <option *ngFor="let c of colors" [ngValue]="c.id">
+                    {{c.description}}
+                </option>
             </select>
         </div>
 
@@ -146,61 +160,101 @@
            
         </div>
         <div class="col-sm-2">
-            <input type="number" class="form-control form-control-lg" id="exampleFormControlInput2" min="0" placeholder="0">
+            <input type="number" class="form-control form-control-lg" ngModel name="price" min="0" placeholder="0">
         </div>
         <div class="col-sm-2 pt-2">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
+                <input class="form-check-input" type="radio" ngModel name="currency_id" value="1" [checked]="true">
+                <label class="form-check-label" for="currency_id">
                   AZN
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
+                <input class="form-check-input" type="radio" value="2" ngModel name="currency_id">
+                <label class="form-check-label" for="currency_id">
                   USD
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                <label class="form-check-label" for="flexRadioDefault3">
+                <input class="form-check-input" type="radio" value="3" ngModel name="currency_id">
+                <label class="form-check-label" for="currency_id">
                   EUR
                 </label>
               </div>
         </div>
+        <div class="col-md-6"></div>
 
 
 
 
-        
-        <div class="col-sm-2"></div>
+
+        <div class="col-sm-2">
+            
+            <h3>Oturacaqların sayı</h3>
+           
+        </div>
         <div class="col-sm-4">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault4" checked>
-                <label class="form-check-label" for="flexRadioDefault4">
-                    Kreditdədir
+                <input class="form-check-input" type="radio" value="1" ngModel name="seat_count" >
+                <label class="form-check-label" for="seat_count">
+                    1
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault5">
-                <label class="form-check-label" for="flexRadioDefault4">
-                    Barter mümkündür
+                <input class="form-check-input" type="radio" value="2" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    2
                 </label>
               </div>
-              
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="3" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    3
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="4" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    4
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="5" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    5
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="6" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    6
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="7" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    7
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="-1" ngModel name="seat_count">
+                <label class="form-check-label" for="seat_count">
+                    8+
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="0" ngModel name="seat_count" [checked]="true">
+                <label class="form-check-label" for="seat_count">
+                    Qeyd olunmasın
+                </label>
+              </div>
         </div>
         <div class="col-md-6"></div>
 
     <br><br><br>
     
     
-    <div class="col-sm-2"></div>
-        <div class="col-sm-2">Əlavə məlumat</div>
-        <div class="col-sm-8">
-            <div class="input-group">
-                <textarea class="form-control" aria-label="With textarea"></textarea>
-            </div>
-        </div>
+   
        
 <br><br><br><br>
         <div class="col-sm-2"></div>
@@ -214,24 +268,24 @@
 
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                <label class="form-check-label" for="flexCheckDefault">
+                <label class="form-check-label" for="leather_salon">
+                    <input class="form-check-input" type="checkbox" [ngModel]="leather_salon" name="leather_salon">
                     Dəri salon
                 </label>
               </div>
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" [ngModel]="park_radar" name="park_radar">
+                <label class="form-check-label" for="park_radar">
                     Park radarı
                 </label>
               </div>
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" [ngModel]="lyuk" name="lyuk">
+                <label class="form-check-label" for="lyuk">
                     Lyuk
                 </label>
               </div>
@@ -248,24 +302,24 @@
 
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" [ngModel]="condisioner" name="condisioner" >
+                <label class="form-check-label" for="condisioner">
                     Kondisioner
                 </label>
               </div>
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" [ngModel]="rear_camera" name="rear_camera">
+                <label class="form-check-label" for="rear_camera">
                     Arxa görüntü kamerası
                 </label>
               </div>
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" [ngModel]="seat_heating" name="seat_heating" >
+                <label class="form-check-label" for="seat_heating">
                     Oturacaqların isidilməsi
                 </label>
               </div>
@@ -274,12 +328,21 @@
         <div class="col-sm-3"></div>
 
 
+        <!-- <app-upload></app-upload> -->
+        <div class="row" style="margin-bottom:15px;">
+            <div class="p-2 w-50 bd-highlight">
+              <img width="250px" height="250px" />
+              <input class="m-2" type="file" id="file" multiple (change)="handleFileInput($event)"/>
+
+            </div>
+          
+        </div>
 
 
         <div class="col-sm-2"></div>
         <div class="col-sm-2"><h3>Əlaqə</h3></div>
         
-        <div class="col-sm-8"></div> -->
+        <div class="col-sm-8"></div>
 
 
 

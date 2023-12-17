@@ -7,13 +7,15 @@ import { ListComponent } from './list/list.component';
 import{FormsModule,ReactiveFormsModule} from '@angular/forms'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListItemComponent } from './list/list-item/list-item.component';
+import { UploadComponent } from './create/upload/upload.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     CreateComponent,
     ListComponent,
-    ListItemComponent
+    ListItemComponent,
+    UploadComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,14 @@
+<div class="row" style="margin-bottom:15px;">
+  <div class="p-2 w-50 bd-highlight">
+    <img width="250px" height="250px" [src]="PhotoFilePath" />
+    <input class="m-2" type="file" (change)="uploadPhoto($event)">
+  </div>
+    <!-- <div class="col-md-4">
+      <span class="upload" *ngIf="progress > 0">
+        {{progress}}%
+      </span>
+      <span class="upload" *ngIf="message">
+        {{message}}
+      </span>
+    </div> -->
+  </div>

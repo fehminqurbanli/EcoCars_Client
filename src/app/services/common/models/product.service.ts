@@ -14,7 +14,10 @@ export class ProductService {
 
   constructor(private httpClientService:HttpClientService) { }
 
-  create(product:CreateProduct){
+  create(product:CreateProduct,carImagePath:Array<File>){
+
+    product.tB_AdsImages=carImagePath;
+
     this.httpClientService.post({
       controller:"TB_Ads"
     },product)
@@ -22,6 +25,7 @@ export class ProductService {
         console.log(res);
       });
 
+      
   }
 
   getBrandNames():Observable<any>{
@@ -47,4 +51,9 @@ export class ProductService {
         return this.httpClientService.get<product>({
           controller:"TB_Ads/GetById?id="+id
         })}
+
+
+        upload(formData:any){
+          return this.httpClientService.uploadPhoto(formData);
+        }
 }

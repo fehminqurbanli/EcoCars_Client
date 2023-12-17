@@ -33,7 +33,7 @@ export class HttpClientService {
     else{
       url=`${this.url(requestParameter)}`;
     }
-    console.log(url);
+    // console.log(url);
     return this.httpClient.post<T>(url,body,{headers:requestParameter.headers});
    }
 
@@ -60,6 +60,11 @@ export class HttpClientService {
    }
 
 
+   uploadPhoto(photo: any) {
+    let apiUrl:string="https://localhost:7171/api/";
+
+    return this.httpClient.post(apiUrl + 'Tb_Ads/Upload', photo);
+  }
 }
 
 
