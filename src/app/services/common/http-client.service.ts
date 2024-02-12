@@ -33,7 +33,8 @@ export class HttpClientService {
     else{
       url=`${this.url(requestParameter)}`;
     }
-    // console.log(url);
+    console.log("url:"+url);
+    console.log("body:"+body);
     return this.httpClient.post<T>(url,body,{headers:requestParameter.headers});
    }
 

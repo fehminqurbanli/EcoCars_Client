@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientService } from '../http-client.service';
 import { CreateProduct } from 'src/app/contracts/create-product';
@@ -14,13 +15,17 @@ export class ProductService {
 
   constructor(private httpClientService:HttpClientService) { }
 
-  create(product:CreateProduct,carImagePath:Array<File>){
+  create(formData:FormData
+    // ,carImagePath:Array<File>
+    ){
 
-    product.tB_AdsImages=carImagePath;
+    // product.TB_AdsImages=carImagePath;
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
 
     this.httpClientService.post({
-      controller:"TB_Ads"
-    },product)
+      controller:"TB_Ads",headers:headers
+    },formData)
       .subscribe((res)=>{
         console.log(res);
       });

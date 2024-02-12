@@ -1,4 +1,4 @@
-<form #frmRegister="ngForm" (ngSubmit)="create(frmRegister.value)">
+<form #frmRegister="ngForm" enctype="multipart/form-data" (ngSubmit)="create(frmRegister.value)">
 
 <div class="container-sm" style="background-color: beige;">
     
@@ -17,8 +17,7 @@
             
         </div>
         <div class="col-sm-4 form-group">
-            <!-- <label>Marka</label> -->
-            <!-- <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="brandNames"> -->
+        
             <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="bName">
                 <option *ngFor="let br of brandNames" [ngValue]="br.id">
                     {{br.brandName}}
@@ -29,17 +28,7 @@
 
 
 
-        <!-- <div class="col-sm-2">
-            
-            <h3>Yanacaq növü</h3>
-           
-        </div>
-        <div class="col-sm-4">
-            <select class="form-select" aria-label="Seçin" [(ngModel)]="bName">
-                <option>Open this select menu</option>
-           
-            </select>
-        </div> -->
+    
 
 
         <div class="col-sm-2">
@@ -48,8 +37,7 @@
            
         </div>
         <div class="col-sm-4 form-group">
-            <!-- <label>Model</label> -->
-            <select id="models" class="form-control" ngModel name="model_id">
+            <select id="models" class="form-control" [(ngModel)]="formData.model_id" name="model_id">
                 <option *ngFor="let m of modelNames" [ngValue]="m.id">
                     {{m.modelName}}
                 </option>
@@ -63,7 +51,7 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" ngModel name="transmission_id">
+            <select class="form-select" [(ngModel)]="formData.transmission_id" name="transmission_id">
                 <option *ngFor="let t of transmissions" [ngValue]="t.id">
                     {{t.description}}
                 </option>
@@ -78,7 +66,7 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" ngModel name="ban_type">
+            <select class="form-select" [(ngModel)]="formData.ban_type" name="ban_type">
                 <option *ngFor="let b of banTypes" [ngValue]="b.id">
                     {{b.description}}
                 </option>
@@ -92,7 +80,7 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" ngModel name="speed_box">
+            <select class="form-select" [(ngModel)]="formData.speed_box" name="speed_box">
                 <option *ngFor="let s of speedBoxes" [ngValue]="s.id">
                     {{s.description}}
                 </option>
@@ -107,18 +95,17 @@
            
         </div>
         <div class="col-sm-2">
-            <!-- <label for="exampleFormControlInput1" class="form-label" >Adınız</label> -->
-            <input class="form-control form-control-lg" type="number" ngModel name="distance" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg" type="number" [(ngModel)]="formData.distance" name="distance" min="0" placeholder="0">
         </div>
         <div class="col-sm-2 pt-2">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" ngModel name="distance_id" value="1" checked>
+                <input class="form-check-input" type="radio" [(ngModel)]="formData.distance_id" name="distance_id" value="1" checked>
                 <label class="form-check-label" for="distance_id">
                   km
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="2" ngModel name="distance_id">
+                <input class="form-check-input" type="radio" value="2" [(ngModel)]="formData.distance_id" name="distance_id">
                 <label class="form-check-label" for="distance_id">
                   mi
                 </label>
@@ -132,7 +119,7 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" ngModel name="year">
+            <select class="form-select" [(ngModel)]="formData.year" name="year">
                 <option *ngFor="let y of years" [ngValue]="y.description">
                     {{y.description}}
                 </option>
@@ -146,7 +133,7 @@
            
         </div>
         <div class="col-sm-4">
-            <select class="form-select" ngModel name="color_id">
+            <select class="form-select" [(ngModel)]="formData.color_id" name="color_id">
                 <option *ngFor="let c of colors" [ngValue]="c.id">
                     {{c.description}}
                 </option>
@@ -160,23 +147,23 @@
            
         </div>
         <div class="col-sm-2">
-            <input type="number" class="form-control form-control-lg" ngModel name="price" min="0" placeholder="0">
+            <input type="number" class="form-control form-control-lg" [(ngModel)]="formData.price" name="price" min="0" placeholder="0">
         </div>
         <div class="col-sm-2 pt-2">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" ngModel name="currency_id" value="1" [checked]="true">
+                <input class="form-check-input" type="radio" [(ngModel)]="formData.currency_id" name="currency_id" value="1" [checked]="true">
                 <label class="form-check-label" for="currency_id">
                   AZN
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="2" ngModel name="currency_id">
+                <input class="form-check-input" type="radio" value="2" [(ngModel)]="formData.currency_id" name="currency_id">
                 <label class="form-check-label" for="currency_id">
                   USD
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="3" ngModel name="currency_id">
+                <input class="form-check-input" type="radio" value="3" [(ngModel)]="formData.currency_id" name="currency_id">
                 <label class="form-check-label" for="currency_id">
                   EUR
                 </label>
@@ -195,55 +182,55 @@
         </div>
         <div class="col-sm-4">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="1" ngModel name="seat_count" >
+                <input class="form-check-input" type="radio" value="1" [(ngModel)]="formData.seat_count" name="seat_count" >
                 <label class="form-check-label" for="seat_count">
                     1
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="2" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="2" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     2
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="3" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="3" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     3
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="4" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="4" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     4
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="5" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="5" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     5
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="6" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="6" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     6
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="7" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="7" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     7
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="-1" ngModel name="seat_count">
+                <input class="form-check-input" type="radio" value="-1" [(ngModel)]="formData.seat_count" name="seat_count">
                 <label class="form-check-label" for="seat_count">
                     8+
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="0" ngModel name="seat_count" [checked]="true">
+                <input class="form-check-input" type="radio" value="0" [(ngModel)]="formData.seat_count" name="seat_count" [checked]="true">
                 <label class="form-check-label" for="seat_count">
                     Qeyd olunmasın
                 </label>
@@ -269,14 +256,14 @@
         <div class="col-sm-2">
             <div class="form-check">
                 <label class="form-check-label" for="leather_salon">
-                    <input class="form-check-input" type="checkbox" [ngModel]="leather_salon" name="leather_salon">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="formData.leather_salon" name="leather_salon">
                     Dəri salon
                 </label>
               </div>
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" [ngModel]="park_radar" name="park_radar">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="formData.park_radar" name="park_radar">
                 <label class="form-check-label" for="park_radar">
                     Park radarı
                 </label>
@@ -284,7 +271,7 @@
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" [ngModel]="lyuk" name="lyuk">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="formData.lyuk" name="lyuk">
                 <label class="form-check-label" for="lyuk">
                     Lyuk
                 </label>
@@ -302,7 +289,7 @@
 
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" [ngModel]="condisioner" name="condisioner" >
+                <input class="form-check-input" type="checkbox" [(ngModel)]="formData.condisioner" name="condisioner" >
                 <label class="form-check-label" for="condisioner">
                     Kondisioner
                 </label>
@@ -310,7 +297,7 @@
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" [ngModel]="rear_camera" name="rear_camera">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="formData.rear_camera" name="rear_camera">
                 <label class="form-check-label" for="rear_camera">
                     Arxa görüntü kamerası
                 </label>
@@ -318,7 +305,7 @@
         </div>
         <div class="col-sm-2">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" [ngModel]="seat_heating" name="seat_heating" >
+                <input class="form-check-input" type="checkbox" [(ngModel)]="formData.seat_heating" name="seat_heating" >
                 <label class="form-check-label" for="seat_heating">
                     Oturacaqların isidilməsi
                 </label>
@@ -332,7 +319,7 @@
         <div class="row" style="margin-bottom:15px;">
             <div class="p-2 w-50 bd-highlight">
               <img width="250px" height="250px" />
-              <input class="m-2" type="file" id="file" multiple (change)="handleFileInput($event)"/>
+              <input class="m-2" type="file" id="file" multiple name="imageFile" (change)="handleFileInput($event)" accept="image/*"/>
 
             </div>
           
@@ -349,20 +336,20 @@
 
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
-            <label for="exampleFormControlInput1" class="form-label" >Adınız</label>
-            <input class="form-control form-control-lg" type="text" ngModel name="name" aria-label=".form-control-lg example">
+            <label class="form-label" >Adınız</label>
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.name" name="name" aria-label=".form-control-lg example">
         </div>
         <div class="col-sm-2">
-            <label for="exampleFormControlInput1" class="form-label" >Şəhər</label>
-            <input class="form-control form-control-lg" type="text" ngModel name="city" aria-label=".form-control-lg example">
+            <label class="form-label" >Şəhər</label>
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.city" name="city" aria-label=".form-control-lg example">
         </div>
         <div class="col-sm-2">
-            <label for="exampleFormControlInput1" class="form-label" >E-mail</label>
-            <input class="form-control form-control-lg" type="email" ngModel name="email">
+            <label class="form-label" >E-mail</label>
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.email" name="email" aria-label=".form-control-lg example">
         </div>
         <div class="col-sm-2">
-            <label for="exampleFormControlInput1" class="form-label" >Telefon nömrəsi</label>
-            <input class="form-control form-control-lg" type="text" ngModel name="phonenumber" aria-label=".form-control-lg example">
+            <label class="form-label" >Telefon nömrəsi</label>
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.phonenumber" name="phonenumber" aria-label=".form-control-lg example">
         </div>
         <div class="col-sm-2"></div>
 
@@ -370,7 +357,8 @@
         <div class="col-sm-2">Əlavə məlumat</div>
         <div class="col-sm-8">
             <div class="input-group">
-                <textarea class="form-control" ngModel name="note" aria-label="With textarea"></textarea>
+                <!-- <textarea class="form-control" ngModel name="form-data.note" aria-label="With textarea"></textarea> -->
+                <textarea class="form-control" [(ngModel)]="formData.note" name="note" aria-label="With textarea"></textarea>
             </div>
         </div>
 
