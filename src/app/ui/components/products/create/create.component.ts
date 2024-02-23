@@ -216,7 +216,17 @@ formData = { name:'',city:'',email:'',phonenumber:'',note:'',price: '',distance:
     for (let i = 0; i < this.myFiles.length; i++) {
       formPayload.append('imageFile', this.myFiles[i], this.myFiles[i].name);
     }
-   
+
+
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      const imageDataUrl = e.target.result;
+      localStorage.setItem('selectedImage', imageDataUrl);
+      console.log('Image saved locally:', imageDataUrl);
+    };
+    reader.readAsDataURL(this.myFiles[0]);
+
+
     console.log(value);
     // this.productService.create(value,this.myFiles);
     this.productService.create(formPayload);

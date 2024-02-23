@@ -12,16 +12,24 @@ export class ListComponent implements OnInit {
   public tbAds:any[];
   // public id:string;
 
-  
+  imageUrl: string;
   constructor(private productService: ProductService){
   }
 
 
   ngOnInit(): void {
     this.productService.getAll().subscribe((res)=>{
-    this.tbAds=res;
-    
-    })
+      console.log(res);
+      for (let i = 0; i < res.length; i++) {
+        // const element = array[i];
+        console.log(res[i]);
+        this.imageUrl = 'data:image/jpeg;base64,' + res[i].tB_AdsImages[0].imageData; // Adjust according to your image type
+
+        res[i].imageUrl=this.imageUrl;
+        
+      }
+      this.tbAds=res;
+  })
   }
 
 }

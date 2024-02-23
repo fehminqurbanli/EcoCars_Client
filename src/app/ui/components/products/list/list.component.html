@@ -9,7 +9,8 @@
             <div class="card-image">
                 <span class="card-notify-badge">{{a.note}}</span>
                 <span class="card-notify-year">2018</span>
-                <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262" alt="Alternate Text" />
+                <!-- <img class="img-fluid" [src]="a.tB_AdsImages[0].carImagePath" alt="Alternate Text" /> -->
+                <img class="img-fluid" [src]="a.imageUrl" alt="Alternate Text" />
             </div>
             <div class="card-image-overlay m-auto">
                 <span class="card-detail-badge">Used</span>
