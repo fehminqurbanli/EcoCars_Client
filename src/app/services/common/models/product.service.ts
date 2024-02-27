@@ -36,13 +36,18 @@ export class ProductService {
   getBrandNames():Observable<any>{
     return this.httpClientService.get({
       controller:"TB_Ads/GetBrandNames"
-    })}
+    })};
     
 
-    getModelNames(brandId?:string):Observable<any>{
-      return this.httpClientService.get<GetModelName>({
+      getModelNames(brandId?:string):Observable<any>{
+        return this.httpClientService.get<GetModelName>({
         controller:"TB_Ads/GetModelNames?brandId="+brandId
-      })}
+      })};
+
+        getModelAndBrand(modelId?:string):Observable<any>{
+          return this.httpClientService.get<any>({
+          controller:"TB_Ads/GetModelAndBrand?modelId="+modelId
+        })};
 
       getAll():Observable<any>{
         return this.httpClientService.get({
@@ -52,7 +57,7 @@ export class ProductService {
   
 
 
-      getById(id:string){
+      getById(id:string):Observable<any>{
         return this.httpClientService.get<product>({
           controller:"TB_Ads/GetById?id="+id
         })}

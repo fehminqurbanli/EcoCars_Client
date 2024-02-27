@@ -4,24 +4,24 @@
 	<br>
 	<div class="row" id="ads">
     <!-- Category Card -->
-    <div class="col-md-4"  *ngFor="let a of tbAds">
-        <div class="card rounded">
+    <div class="col-md-4" style="padding-bottom: 10px;" *ngFor="let a of tbAds">
+        <div class="card rounded" style="width: 400px;">
             <div class="card-image">
-                <span class="card-notify-badge">{{a.note}}</span>
-                <span class="card-notify-year">2018</span>
+                <span class="card-notify-badge">{{a.city}}</span>
+                <span class="card-notify-year">{{a.year}}</span>
                 <!-- <img class="img-fluid" [src]="a.tB_AdsImages[0].carImagePath" alt="Alternate Text" /> -->
-                <img class="img-fluid" [src]="a.imageUrl" alt="Alternate Text" />
+                <img class="img-fluid" [src]="a.imageUrl" style="width: 100%; height: 300px;" alt="Alternate Text" />
             </div>
             <div class="card-image-overlay m-auto">
-                <span class="card-detail-badge">Used</span>
-                <span class="card-detail-badge">$28,000.00</span>
-                <span class="card-detail-badge">13000 Kms</span>
+                <span class="card-detail-badge">{{a.speedBox}}</span>
+                <span class="card-detail-badge">{{a.price}} {{a.currencyName}}</span>
+                <span class="card-detail-badge">{{a.distance}} {{a.distanceType}}</span>
             </div>
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
-                    <h5>Honda Accord LX</h5>
+                    <h5>{{a.brandName}} {{a.modelName}}</h5>
                 </div>
-                <a class="ad-btn" routerLink="/products/list-item/{{a.id}}">View</a>
+                <a class="ad-btn" routerLink="/products/list-item/{{a.id}}">Ətraflı</a>
             </div>
         </div>
     </div>

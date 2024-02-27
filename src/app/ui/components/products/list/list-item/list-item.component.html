@@ -5,25 +5,49 @@
 	<br>
 	<div class="row" id="ads" >
     <!-- Category Card -->
-        <div class="col-sm-4" >
-            <div class="card rounded" >
-                <div class="card-image">
-                    <span class="card-notify-badge">{{tbAdsDetail.note}}</span>
-                    <span class="card-notify-year">2018</span>
-                    <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262" alt="Alternate Text" />
+        <div class="col-sm-3" *ngFor="let p of imageUrl" >
+            <div class="card rounded" style="width: 300px;">
+                <div class="card-image" >
+                    <!-- <span class="card-notify-badge">{{tbAdsDetail.note}}</span> -->
+                    <!-- <span class="card-notify-year">2018</span> -->
+                    <img class="img-fluid" style="width: 100%; height: 200px;" [src]="p" alt="Alternate Text" />
                 </div>
-                <div class="card-image-overlay m-auto">
-                    <span class="card-detail-badge">Used</span>
-                    <span class="card-detail-badge">$28,000.00</span>
-                    <span class="card-detail-badge">13000 Kms</span>
-                </div>
-                <div class="card-body text-center">
-                    <div class="ad-title m-auto">
-                        <h5>Honda Accord LX</h5>
-                    </div>
-                </div>
+               
             </div>
         </div>
-    
+        
+</div>
+<div class="row">
+    <div class="col-4 m-4" style="text-align: right;"><h1><b>{{tbAdsDetail.brandName}} {{tbAdsDetail.modelName}}, {{tbAdsDetail.year}} il, {{tbAdsDetail.distance}} {{tbAdsDetail.distanceType}}</b></h1></div>
+</div><hr>
+    <div class="row">
+        <div class="col-sm-2" style="text-align: right;">
+            <h3>Marka:</h3><h3>Ötürücü:</h3><h3>Sürətlər qutusu:</h3><h3>Buraxılış ili:</h3><h3>Rəng:</h3><h3>Yürüş:</h3>
+        </div>
+        <div class="col-sm-2">
+            <h3>{{tbAdsDetail.brandName}}</h3><h3>{{tbAdsDetail.transmission}}</h3><h3>{{tbAdsDetail.speedBox}}</h3><h3>{{tbAdsDetail.year}}</h3><h3>{{tbAdsDetail.colorName}}</h3><h3>{{tbAdsDetail.distance}} {{tbAdsDetail.distanceType}}</h3>
+        </div>
 
+
+
+        <div class="col-sm-2" style="text-align: right;">
+            <h3>Ban növü:</h3><h3>Oturacaqların sayı:</h3><h3>Ad:</h3><h3>Telefon nömrəsi:</h3><h3>E-mail:</h3><h3>Şəhər:</h3>
+        </div>
+        <div class="col-sm-2">
+            <h3>{{tbAdsDetail.ban}}</h3><h3>{{tbAdsDetail.seat}}</h3><h3>{{tbAdsDetail.name}}</h3><h3>{{tbAdsDetail.phonenumber}}</h3><h3>{{tbAdsDetail.email}}</h3><h3>{{tbAdsDetail.city}}</h3>
+        </div>
+
+
+        <div class="col-sm-2" style="text-align: right;">
+            <h3>Dəri salon:</h3><h3>Park radar:</h3><h3>Lyuk:</h3><h3>Kondisioner:</h3><h3>Yaxın kamera:</h3><h3>Oturacaq isidici:</h3>
+        </div>
+        <div class="col-sm-2">
+            <h3>{{tbAdsDetail.leather}}</h3><h3>{{tbAdsDetail.park}}</h3><h3>{{tbAdsDetail.dn_Lyuk}}</h3><h3>{{tbAdsDetail.cond}}</h3><h3>{{tbAdsDetail.rear}}</h3><h3>{{tbAdsDetail.seatHeat}}</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+         <div class="col-sm-2" style="text-align: right;"><h3>Qeyd:</h3></div>
+         <div class="col-sm-5"><h3>{{tbAdsDetail.note}}</h3></div>
+    </div>
 </div>
