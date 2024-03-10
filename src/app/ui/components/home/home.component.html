@@ -1,17 +1,25 @@
+
 <!-- banner -->
-<section class="banner_main">
+<section class="banner_main" style="background: url(assets/images/banner.jpg);
+background-repeat: no-repeat;
+min-height: 700px;
+display: flex;
+justify-content: center;
+align-content: center;
+align-items: center;
+background-size: 100% 100%;">
     <div class="container">
        <div class="row d_flex">
           <div class="col-md-12">
              <div class="text-bg">
-                <h1>Find best car Here For rent</h1>
-                <strong>Free Multipurpose Responsive</strong>
-                <span>Landing Page 2019</span>
+                <h1>Ən yaxşı elektrik avtomobilləri buradan tap</h1>
+                <strong>Elanlarını pulsuz yerləşdir</strong>
+                <span>Avtomobilini onlayn sat</span>
                 <p>
-                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since theLorem Ipsum is simply dummy text of the printing 
+                  Biz inanırıq ki, elektrik avtomobili hər kəsə və istənilən həyat tərzinə mükəmməl uyğunlaşa bilər. 
                    <head></head>
                 </p>
-                <a href="#">Read More</a>
+                <a routerLink="about">Daha çox</a>
              </div>
           </div>
        </div>
@@ -25,87 +33,24 @@
           <div class="col-md-12">
              <div class="titlepage">
                 <h2>ƏN MƏŞHUR MAŞIN ÇEŞIDLƏRi </h2>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</span>
+                <span>Ay üzrə sayta yerləşdirilən ən yaxşı avtomobil markaları</span>
              </div>
           </div>
        </div>
-       <div class="row">
-          <div class="col-md-4 padding_leri">
+       <div class="row" >
+          <div class="col-md-4" *ngFor="let a of tbAds">
              <div class="car_box">
-                <figure><img src="assets/images/car_img1.png" alt="#"/></figure>
-                <h3>Hundai</h3>
+                <figure><img class="img-fluid" [src]="a.imageUrl" style="width: 100%; height: 300px;" alt="Alternate Text"/></figure>
+                <h3>{{a.brandName}}</h3>
              </div>
           </div>
-          <div class="col-md-4 padding_leri">
-             <div class="car_box">
-                <figure><img src="assets/images/car_img2.png" alt="#"/></figure>
-                <h3>Audi</h3>
-             </div>
-          </div>
-          <div class="col-md-4 padding_leri">
-             <div class="car_box">
-                <figure><img src="assets/images/car_img3.png" alt="#"/></figure>
-                <h3>Bmw x5</h3>
-             </div>
-          </div>
+         
        </div>
     </div>
   </div>
   <!-- end car -->
   <!-- bestCar -->
-  <div id="contact" class="bestCar">
-    <div class="container">
-       <div class="row">
-          <div class="col-md-12">
-          </div>
-       </div>
-       <div class="row">
-          <div class="col-sm-12">
-             <div class="row">
-                <div class="col-md-6 offset-md-6">
-                   <form class="main_form">
-                      <div class="titlepage">
-                         <h2>Ən yaxşı elektrik avtomobili tap</h2>
-                      </div>
-                      <div class="row">
-                         <div class="col-md-12">
-                            <select>
-                               <option value="0">Maşın markası seçin</option>
-                               <option value="1">1</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                            </select>
-                         </div>
-                         <!-- <div class="col-md-12">
-                            <select>
-                               <option value="0">Choose Car Type </option>
-                               <option value="1">1</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                            </select>
-                         </div> -->
-                         <div class="col-md-12">
-                            <input class="contactus" placeholder="Axtar" type="search" name="Search">                          
-                         </div>
-                         <!-- <div class="col-md-12">
-                            <select>
-                               <option value="0">Price of Rent</option>
-                               <option value="1">1</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                            </select>
-                         </div> -->
-                         <div class="col-sm-12">
-                            <button class="find_btn">Gətir</button>
-                         </div>
-                      </div>
-                   </form>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
-  </div>
+
   <!-- end bestCar -->
   <!-- choose  section -->
   <div class="choose ">
@@ -113,8 +58,8 @@
        <div class="row">
           <div class="col-md-12">
              <div class="titlepage">
-                <h2>Why Choose Us</h2>
-                <span>It is a long established fact that a reader will be distracted by the readable content of a page when<br> looking at its layout. The point of using </span>
+                <h2>NİYƏ BİZ</h2>
+                <span>EcoCars daha yaxşı, daha parlaq və daha davamlı gələcək üçün ümumi mif və yanlış təsəvvürlərə qarşı mübarizə aparmaqla elektrik nəqliyyat vasitələrinə sahib olmağın faydaları haqqında bütün dünyanı maarifləndirməyə çalışır.</span>
              </div>
           </div>
        </div>
@@ -122,19 +67,19 @@
           <div class="col-md-12">
              <div class="choose_box">
                 <span>01</span>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making </p>
+                <p>Avtomobil sənayesi gəlirlərə görə dünyanın ən əhəmiyyətli iqtisadi sektorlarından biridir. EcoCars dünyada elektrik və hibrid avtomobil həvəskarlarının ən böyük auditoriyasını təmsil edir. </p>
              </div>
           </div>
           <div class="col-md-12">
              <div class="choose_box">
                 <span>02</span>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making </p>
+                <p>İstehlakçılara mövcud olan ən sadə və istifadəçi dostu şəkildə elektrikli nəqliyyat vasitələri haqqında öyrənməyə, almağa və satmağa imkan verən xüsusi elektrikli avtomobil platforması və icması. </p>
              </div>
           </div>
           <div class="col-md-12">
              <div class="choose_box">
                 <span>03</span>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making </p>
+                <p>EcoCars, sənayenin aparıcı məzmunu, müştərilərimizə misilsiz sədaqəti və əla istifadəçi təcrübəsi ilə məzmunu yüksək cəlb olunmuş auditoriyaya çatdıran təməlqoyma texnologiya şirkətidir. </p>
              </div>
           </div>
        </div>
@@ -147,7 +92,7 @@
        <div class="row">
           <div class="col-md-12">
              <div class="titlepage">
-                <h2>What is says our cutomer</h2>
+                <h2>MÜŞTƏRİMİZ NƏ DEYİR</h2>
              </div>
           </div>
        </div>
@@ -168,9 +113,9 @@
                             </div>
                             <div class="our cross_layout">
                                <div class="test_box">
-                                  <h4>Due markes</h4>
-                                  <span>Rental</span>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
+                                  <h4>John</h4>
+                                  <span>Müştəri</span>
+                                  <p>Böyük təcrübə. Super sürətli və asan əməliyyat. Və avtomobilim üçün gözlədiyimdən daha çoxunu aldım. Çox tövsiyə olunur.</p>
                                   <i><img src="assets/images/te1.png" alt="#"/></i>
                                </div>
                             </div>
@@ -185,9 +130,9 @@
                             </div>
                             <div class="our cross_layout">
                                <div class="test_box">
-                                  <h4>Due markes</h4>
-                                  <span>Rental</span>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
+                                  <h4>Mark</h4>
+                                  <span>Müştəri</span>
+                                  <p>Düzünü desəm, satışı necə asanlaşdırdıqlarından bir az narahat idim. Xoş təəccüb! Qüsursuz transfer! Əla qiymət!</p>
                                   <i><img src="assets/images/te1.png" alt="#"/></i>
                                </div>
                             </div>
@@ -202,9 +147,9 @@
                             </div>
                             <div class="our cross_layout">
                                <div class="test_box">
-                                  <h4>Due markes</h4>
-                                  <span>Rental</span>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
+                                  <h4>Parker</h4>
+                                  <span>Müştəri</span>
+                                  <p>Təklifdən tutmuş avtomobilimin götürülməsinə qədər, EcoCars stressli bir prosesi tamamilə qüsursuz etdi. Müştəri olduğum nümayəndələr peşəkar və bacarıqlı idilər. Çox tövsiyə edərdim.</p>
                                   <i><img src="assets/images/te1.png" alt="#"/></i>
                                </div>
                             </div>

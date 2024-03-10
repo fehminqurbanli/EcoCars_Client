@@ -55,7 +55,11 @@ export class ProductService {
         })
       };
   
-
+      getTopThreeCars():Observable<any>{
+        return this.httpClientService.get({
+          controller:"TB_Ads/GetTopThreeCars"
+        })
+      };
 
       getById(id:string):Observable<any>{
         return this.httpClientService.get<product>({

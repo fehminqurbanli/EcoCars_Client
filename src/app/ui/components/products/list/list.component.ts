@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/services/common/models/product.service';
+import { GetBrandName } from 'src/app/contracts/get-brand-name';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -12,10 +14,26 @@ export class ListComponent implements OnInit {
   public tbAds:any[];
   // public modelName:string;
   // public brandName:string;
+  public brandNames:GetBrandName[];
  
   imageUrl: string;
-  constructor(private productService: ProductService){
+ 
+  constructor(private productService:ProductService){
+    this.productService.getBrandNames().subscribe((results)=>{
+      this.brandNames=results;
+      console.log(this.brandNames);
+      
+    })
+
   }
+  // onChange($event: any) {
+
+  //   this.productService.getModelNames($event).subscribe((res)=>{
+  //   this.modelNames=res;
+  //  console.log(this.modelNames);
+
+  // })
+  // }
 
 
   ngOnInit(): void {
