@@ -19,32 +19,35 @@
                           </div>
                           <div class="row">
                              <div class="col-md-12">
-                                <!-- <select (ngModelChange)="onChange($event)" name="brands">
+                             <div class="col-md-12">Marka</div>
+                                <select (ngModelChange)="onChangeBrand($event)" class="form-control" name="brands" [(ngModel)]="bName">
+                                 <option>Marka seçin</option>
                                  <option *ngFor="let br of brandNames" [ngValue]="br.id">
                                      {{br.brandName}}
                                  </option>
                                  
-                                 </select> -->
+                                 </select>
                              </div>
                              <div class="col-md-12">
-                                <select>
-                                   <option value="0">Choose Car Type </option>
-                                   <option value="1">1</option>
-                                   <option value="2">2</option>
-                                   <option value="3">3</option>
-                                </select>
+                              <div class="col-md-12">Model</div>
+                              <select (ngModelChange)="onChangeModel($event)" class="form-control" name="models" [(ngModel)]="mName">
+                                 <option *ngFor="let br of modelNames" [ngValue]="br.id">
+                                     {{br.modelName}}
+                                 </option>
+                                 
+                                 </select>
                              </div>
                             
-                             <div class="col-md-12">
+                             <!-- <div class="col-md-12">
                                 <select>
                                    <option value="0">Price of Rent</option>
                                    <option value="1">1</option>
                                    <option value="2">2</option>
                                    <option value="3">3</option>
                                 </select>
-                             </div>
+                             </div> -->
                              <div class="col-sm-12">
-                                <button class="find_btn">Gətir</button>
+                                <button class="find_btn" (click)="handle()">Gətir</button>
                              </div>
                           </div>
                        </form>

@@ -19,7 +19,7 @@ export class CreateComponent{
 //   leather_salon:'',park_radar:'',lyuk:'',condisioner:'',ban_type:'',rear_camera:'',seat_heating:''
 // };
 
-formData = { name:'',city:'',email:'',phonenumber:'',note:'',price: '',distance:0,year:0,model_id:uuid,
+formData = { name:'',city:'',email:'',phonenumber:'',note:'',price: '',distance:'',year:0,model_id:uuid,brand_id:uuid,
             transmission_id:0,ban_type:0,speed_box:0,distance_id:0,color_id:0,currency_id:0,seat_count:0,
             leather_salon:false,park_radar:false,lyuk:false,condisioner:false,rear_camera:false,seat_heating:false
   };
@@ -190,6 +190,7 @@ formData = { name:'',city:'',email:'',phonenumber:'',note:'',price: '',distance:
     // value.preventDefault();
     const formPayload: FormData = new FormData();
     formPayload.append('model_id',this.formData.model_id);
+    formPayload.append('brand_id',this.formData.brand_id);
     formPayload.append('transmission_id',this.formData.transmission_id.toString());
     formPayload.append('name',this.formData.name);
     formPayload.append('city',this.formData.city);

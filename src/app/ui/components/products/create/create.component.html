@@ -18,7 +18,7 @@
         </div>
         <div class="col-sm-4 form-group">
         
-            <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="bName">
+            <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="formData.brand_id">
                 <option *ngFor="let br of brandNames" [ngValue]="br.id">
                     {{br.brandName}}
                 </option>
@@ -313,18 +313,22 @@
         </div>
     
         <div class="col-sm-3"></div>
-
+<hr>
 
         <!-- <app-upload></app-upload> -->
-        <div class="row" style="margin-bottom:15px;">
-            <div class="p-2 w-50 bd-highlight">
-              <img width="250px" height="250px" />
-              <input class="m-2" type="file" id="file" multiple name="imageFile" (change)="handleFileInput($event)" accept="image/*"/>
-
+        <div class="row" style="margin:15px;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="p-2 w-50 bd-highlight">
+                    <input class="m-2" type="file" id="file" multiple name="imageFile" (change)="handleFileInput($event)" accept="image/*"/>
+      
+                  </div>
             </div>
+            
           
         </div>
 
+        <hr>
 
         <div class="col-sm-2"></div>
         <div class="col-sm-2"><h3>Əlaqə</h3></div>
@@ -337,7 +341,7 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <label class="form-label" >Adınız</label>
-            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.name" name="name" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.name" name="name" formControlName="name" aria-label=".form-control-lg example">
         </div>
         <div class="col-sm-2">
             <label class="form-label" >Şəhər</label>
@@ -355,7 +359,7 @@
 
         <div class="col-sm-2"></div>
         <div class="col-sm-2">Əlavə məlumat</div>
-        <div class="col-sm-8">
+        <div class="col-sm-6">
             <div class="input-group">
                 <!-- <textarea class="form-control" ngModel name="form-data.note" aria-label="With textarea"></textarea> -->
                 <textarea class="form-control" [(ngModel)]="formData.note" name="note" aria-label="With textarea"></textarea>

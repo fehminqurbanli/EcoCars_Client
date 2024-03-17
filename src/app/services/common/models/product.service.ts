@@ -67,6 +67,16 @@ export class ProductService {
         })}
 
 
+        getByBrandId(brandId:string,modelId:string):Observable<any>{
+        console.log("fehmin");
+
+          return this.httpClientService.get<any>({
+            
+            // controller:"TB_Ads/GetByBrandId?brandId="+brandId
+            controller:`TB_Ads/GetByBrandId?brandId=${brandId}&modelId=${modelId}`
+          })
+        }
+
         upload(formData:any){
           return this.httpClientService.uploadPhoto(formData);
         }
