@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ProductsModule } from './products/products.module';
 import { HomeModule } from './home/home.module';
 import { AboutComponent } from './about/about.component';
+import { AboutModule } from './about/about.module';
 
 
 
 @NgModule({
   declarations: [
-    AboutComponent
+    // AboutComponent
   ],
   imports: [
     CommonModule,
     ProductsModule,
-    HomeModule
+    HomeModule,
+    AboutModule
   ]
 })
 export class ComponentsModule { }

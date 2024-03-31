@@ -1,0 +1,96 @@
+<form #frmRegister="ngForm" enctype="multipart/form-data" (ngSubmit)="create(frmRegister.value)">
+
+    <div class="container-sm" style="background-color: beige;">
+        
+    <br><br>
+        <div class="row">
+            <h2>Bizi dəyərləndirin</h2>
+            <hr>
+    
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <label class="form-label" ><h3>Adınız</h3></label>
+                <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.userName" name="userName" aria-label=".form-control-lg example">
+            </div>
+            <div class="col-sm-6"></div>
+
+<br>
+
+            <div class="col-sm-2">
+            
+               
+            </div>
+            <div class="col-sm-4">
+                <h3>Dəyərləndirmə</h3>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="1" [(ngModel)]="formData.ratingStar" name="ratingStar" >
+                    <label class="form-check-label" for="ratingStar">
+                        1
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="2" [(ngModel)]="formData.ratingStar" name="ratingStar">
+                    <label class="form-check-label" for="ratingStar">
+                        2
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="3" [(ngModel)]="formData.ratingStar" name="ratingStar">
+                    <label class="form-check-label" for="ratingStar">
+                        3
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="4" [(ngModel)]="formData.ratingStar" name="ratingStar">
+                    <label class="form-check-label" for="ratingStar">
+                        4
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="5" [(ngModel)]="formData.ratingStar" name="ratingStar">
+                    <label class="form-check-label" for="ratingStar">
+                        5
+                    </label>
+                  </div>
+                  
+            </div>
+            <div class="col-md-6"></div>
+            
+
+
+
+            <div class="col-sm-2"></div>
+    
+            <div class="col-sm-3"><h3>Vebsayt haqqında düşüncələriniz</h3></div>
+            <div class="col-sm-7"></div>
+
+
+
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <textarea class="form-control" [(ngModel)]="formData.description" name="note" aria-label="With textarea"></textarea>
+                </div>
+            </div>
+    <div class="col-sm-4"></div>
+            <br><br>
+            <br><br>
+            <br><br>
+        <div class="col-sm-2"></div>
+        <div class="row col-sm-3">
+            <div class="col">
+                <button class="btn btn-danger" aria-current="page" [routerLink]="['']">İmtina et</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" type="submit">Əlavə et</button>
+            </div>
+        </div>
+    <br><br>
+          
+        </div>
+        
+    </div>
+    </form>
+    
