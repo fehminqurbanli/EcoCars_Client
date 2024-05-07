@@ -18,7 +18,7 @@
         </div>
         <div class="col-sm-4 form-group">
         
-            <select (ngModelChange)="onChange($event)" class="form-control" name="brands" [(ngModel)]="formData.brand_id">
+            <select (ngModelChange)="onChange($event)" class="form-control" name="brand_id" [(ngModel)]="formData.brand_id">
                 <option *ngFor="let br of brandNames" [ngValue]="br.id">
                     {{br.brandName}}
                 </option>
@@ -341,7 +341,7 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <label class="form-label" >Adınız</label>
-            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.name" name="name" formControlName="name" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="formData.name" name="name" aria-label=".form-control-lg example">
         </div>
         <div class="col-sm-2">
             <label class="form-label" >Şəhər</label>
